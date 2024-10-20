@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: coverage folder
+coverage/
+
+# Optional: temporary files
+*.tmp
+*.temp
+
+# Optional: yarn integrity file
+yarn-error.log
+
+# Optional: macOS specific files
+.AppleDouble
+.LSOverride
+
+# Optional: npm package-lock files
+package-lock.json
+
+# Optional: yarn files
+yarn.lock
