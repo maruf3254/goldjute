@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 
 // Create a new product
 export const createProduct = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description, image } = req.body;
 
   try {
-    const newProduct = new Product({ title, description });
+    const newProduct = new Product({ title, description, image });
     await newProduct.save();
     res.status(201).json(newProduct);
   } catch (error) {
@@ -38,12 +38,12 @@ export const getProductById = async (req, res) => {
 // Update a product by ID
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
-  const { title, description } = req.body;
+  const { title, description, image } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).json({ message: `No product with id: ${id}` });
 
-  const updatedProduct = { title, description, _id: id };
+  const updatedProduct = { title, description, image, _id: id };
 
   try {
     const product = await Product.findByIdAndUpdate(id, updatedProduct, {
